@@ -10,9 +10,11 @@ public class HiLo {
 			int theNumber = (int)(Math.random() * 100 + 1);
 			//System.out.println( theNumber );
 			int guess = 0;
+			int tries = 0;
 			while (guess != theNumber) {
 				System.out.println("Guess a number between 1 and 100:");
 				guess = scan.nextInt();
+				tries++;
 				if (guess < theNumber) 
 					System.out.println(guess + " is too low, try again.");
 				else if (guess > theNumber)
@@ -20,6 +22,7 @@ public class HiLo {
 				else 
 					System.out.println(guess + " is correct. You win.");
 			}
+			System.out.println("It only took you " + tries + " tries.");
 			System.out.println("Do you want to play again (y/n)?");
 			playAgain = scan.next();
 		} while (playAgain.equalsIgnoreCase("y"));
